@@ -16,12 +16,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-gem_package "fog" do
-  action :install
+g=gem_package "fog" do
+  action :none
+end
+g.run_action(:install)
+
+c=chef_gem "fog" do
+  action :none
 end
 
-chef_gem "fog" do
-  action :install
-end
+c.run_action(:install)
 
 Gem.clear_paths
