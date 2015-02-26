@@ -18,7 +18,7 @@
 #
 y=bash "yum install" do
     code <<-EOF
-      yum groupinstall "Development Tools"
+      yum groupinstall "Development Tools" -y
     EOF
     action :nothing
 end
