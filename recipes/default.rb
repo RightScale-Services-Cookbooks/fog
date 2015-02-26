@@ -17,14 +17,13 @@
 # limitations under the License.
 #
 g=gem_package "fog" do
-  action :none
+  action :nothing
 end
 g.run_action(:install)
 
 c=chef_gem "fog" do
-  action :none
+  action :nothing
 end
-
 c.run_action(:install)
 
 Gem.clear_paths
