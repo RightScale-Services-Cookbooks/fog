@@ -16,6 +16,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+y=bash "yum install" do
+    code <<-EOF
+      yum groupinstall "Development Tools"
+    EOF
+    action :nothing
+end
+y.run_action(:run)
+
 g=gem_package "fog" do
   action :nothing
 end
