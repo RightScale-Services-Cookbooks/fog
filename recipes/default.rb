@@ -16,6 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+include_recipe "libxml2"
+
 y=bash "yum install" do
     code <<-EOF
       yum groupinstall "Development Tools" -y
