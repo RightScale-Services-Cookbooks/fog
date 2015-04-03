@@ -21,6 +21,7 @@ include_recipe "libxml2"
 y=bash "yum install" do
     code <<-EOF
       yum groupinstall "Development Tools" -y
+      yum install libxml2 libxml2-devel -y
     EOF
     action :nothing
 end
