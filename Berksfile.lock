@@ -1,0 +1,19 @@
+{
+  "sources": {
+    "fog": {
+      "path": "."
+    },
+    "build-essential": {
+      "locked_version": "2.2.2"
+    },
+    "libxml2": {
+      "locked_version": "0.1.1"
+    },
+    "yum": {
+      "locked_version": "3.6.0"
+    },
+    "apt": {
+      "locked_version": "2.7.0"
+    }
+  }
+}
