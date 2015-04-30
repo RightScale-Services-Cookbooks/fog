@@ -16,25 +16,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-include_recipe "libxml2"
+include_recipe "build-essential::default"
+include_recipe "libxml2::default"
 
-y=bash "yum install" do
-    code <<-EOF
-      yum groupinstall "Development Tools" -y
-      yum install libxml2 libxml2-devel -y
-    EOF
-    action :nothing
+chef_gem "fog" do
+  compile_time true if respond_to?(:compile_time)
+  version node['fog']['version']
+  action :install
 end
-y.run_action(:run)
-
-g=gem_package "fog" do
-  action :nothing
-end
-g.run_action(:install)
-
-c=chef_gem "fog" do
-  action :nothing
-end
-c.run_action(:install)
 
 Gem.clear_paths
