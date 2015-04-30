@@ -19,9 +19,9 @@
 include_recipe "build-essential::default"
 include_recipe "libxml2::default"
 
-c=chef_gem "fog" do
-  action :nothing
+chef_gem "fog" do
+  compile_time true if respond_to?(:compile_time)
+  action :install
 end
-c.run_action(:install)
 
 Gem.clear_paths
