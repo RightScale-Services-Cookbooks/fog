@@ -10,4 +10,11 @@ describe 'fog::default' do
   it 'includes libxml-devel' do
     expect(chef_run).to include_recipe('libxml2::default')
   end
+
+  it 'installs fog gem' do
+    expect(chef_run).to install_chef_gem('fog').with(
+      compile_time: nil,
+      version: chef_run.node['fog']['version']
+    )
+  end
 end

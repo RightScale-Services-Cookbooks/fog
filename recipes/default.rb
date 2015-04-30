@@ -21,6 +21,7 @@ include_recipe "libxml2::default"
 
 chef_gem "fog" do
   compile_time true if respond_to?(:compile_time)
+  version node['fog']['version']
   action :install
 end
 
