@@ -6,7 +6,7 @@ description      'Installs/Configures fog'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.2.0'
 
-
-depends "nokogiri"
+depends "build-essential"
+depends "libxml2"
 
 recipe "fog::default", "installs fog"
