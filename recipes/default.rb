@@ -16,6 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+package "zlib1g-dev" if node['platform_family'] == "debian"
 include_recipe "build-essential::default"
 include_recipe "libxml2::default"
 
